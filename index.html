@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Adivina el número</h1>
+    </header>
+
+    <main class="container">
+      <section>
+        <h3>Instrucciones</h3>
+        <p>
+          El sistema seleccionara un número aleatorio del 1 al 100 y tu mision
+          es descubrirlo antes de los 10 intentos . Después de cada intento
+          debería decirle al jugador si ha acertado o no - y si está equivocado,
+          debería decirle si se ha quedado corto, o se ha pasado. También
+          debería decir los números que ya se han probado anteriormente. El
+          juego acabará una vez que el jugador acierte o cuando se acaben los
+          intentos. Cuando el juego se acabe, se le debe dar al jugador la
+          opción de volver a jugar.
+        </p>
+      </section>
+
+      <section class="cta">
+        <h3>¿Te animas? ¡Inscribete!</h3>
+        <form
+          action="src/pages/index.html"
+          method="GET"
+          id="loginForm"
+          class="form"
+        >
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" name="Nombre" id="name" required />
+          </div>
+          <input type="submit" value="¡Vamos!" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
