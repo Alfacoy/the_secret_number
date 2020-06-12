@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Adivina el número</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
@@ -13,16 +13,36 @@
     </header>
 
     <main class="container">
-      <h2 id="user_title"></h2>
-      <section>
-        <div>
+      <!--MainGame-->
+      <section class="mainGame" id="mainGame">
+        <h2 id="user_title"></h2>
+        <div class="mainGame__input">
           <input type="text" id="input_number" />
-          <input type="button" value="Probar" id="btn_number" />
+          <input class="btn" type="button" value="Probar" id="btn_number" />
         </div>
-        <div>
-          <p id="round">Te quedan 10 intentos.</p>
+        <div class="mainGame__message">
+          <p id="round" class="mainGame__message--round">
+            Te quedan 10 intentos.
+          </p>
           <p id="list_number"></p>
           <p id="message"></p>
+        </div>
+      </section>
+      <!--Results-->
+      <section class="mainResults hide" id="reset">
+        <p class="mainResults__result" id="winOrLose"></p>
+        <p>
+          El número secreto era
+          <span id="secretNumber" class="mainResults__number"></span>
+        </p>
+        <div class="mainResults__reset">
+          <p>¿Quieres volver a jugar?</p>
+          <input
+            class="btn"
+            type="button"
+            value="Volver a jugar"
+            id="btn_reset"
+          />
         </div>
       </section>
     </main>

@@ -3,55 +3,48 @@
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
 body {
   margin: 0;
+  background-color: #00b8ff;
+  color: #fff;
 }
-
+h2 {
+  text-align: center;
+}
 h3 {
   text-transform: uppercase;
-  background-color: yellowgreen;
-  padding: 0 0.5rem;
+  background-color: #9600ff;
+  padding: 0.5rem 0.5rem;
 }
-
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 0 1rem;
 }
-
 .header {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
+  background-color: #4900ff;
   padding: 2rem 0;
-  background-color: #2d3e50;
   margin-bottom: 3rem;
 }
-
 /*Formulario*/
-.cta {
+.callToAction {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5rem 0;
 }
-
 .form {
-  padding: 2rem 1rem;
+  padding: 2rem 0.5rem;
   border: 1px solid black;
   border-radius: 0.3rem;
 }
-
 .form div > label {
   display: block;
   padding-left: 1rem;
   padding-bottom: 0.3rem;
 }
-
 .form div > input {
   display: block;
   width: 300px;
@@ -59,17 +52,74 @@ h3 {
   padding: 0.5rem 0;
   padding-left: 1rem;
 }
-
 .form > input[type="submit"] {
   width: 300px;
   padding: 1rem 0.5rem;
   font-weight: bold;
-  background-color: yellowgreen;
+  background-color: #ff00c1;
 }
+/*MainGame*/
+/*MainGame__Input*/
+.mainGame__input {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}
+.mainGame__input > input:first-of-type {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+}
+/*MainGame__message*/
+.mainGame__message {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.mainGame__message--round {
+  background-color: tomato;
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+}
+/*MainResults*/
+.mainResults {
+  text-align: center;
+}
+.mainResults__result {
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.mainResults__number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4900ff;
+}
+.mainResults__reset {
+  margin-top: 3rem;
+}
+.mainResults__reset > p {
+  font-size: 1.4rem;
+}
+/*Displays*/
+.hide {
+  display: none;
+}
+/*Buttons*/
+.btn {
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+}
+/*Animations*/
 
-@media screen and (min-width: 800px) {
+/*Media Queries*/
+@media screen and (min-width: 600px) {
   .container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 0;
   }
 }
+
+/*Agregar variables de colores*/

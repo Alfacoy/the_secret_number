@@ -12,7 +12,9 @@ const Capitalize = (param) => param.charAt(0).toUpperCase() + param.slice(1);
 export const UserTitle = (URL) => {
   const title = document.getElementById("user_title");
   const name = URL.filter((i) => i[0] == "Nombre")[0][1];
-  title.innerText = `Mucha suerte, ${Capitalize(name)}`;
+  title.innerText = `¡Mucha suerte, ${
+    isNaN(name) ? Capitalize(name) : `N°${name}`
+  }!`;
 };
 
 //Número secreto
