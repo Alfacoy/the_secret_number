@@ -21,7 +21,7 @@ export const UserTitle = (URL) => {
 export const SecretNumber = () => Math.floor(Math.random() * 100) + 1;
 
 //ColdHotBurn
-export function ColdHotBurn(secret, inputNumber) {
+export const ColdHotBurn = (secret, inputNumber) => {
   const secretNumber = secret;
   const myNumber = parseInt(inputNumber);
   let diferencia = secretNumber - myNumber;
@@ -50,4 +50,4 @@ export function ColdHotBurn(secret, inputNumber) {
   if (diferencia >= 26 || diferencia <= -26) {
     return "Frio!!";
   }
-}
+};

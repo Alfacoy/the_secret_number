@@ -33,6 +33,10 @@ h3 {
   background-color: var(--title-bg-color);
   padding: 0.5rem 0.5rem;
 }
+p {
+  line-height: 1.7rem;
+  letter-spacing: 0.2rem;
+}
 /*Clases*/
 .container {
   padding: 0 1rem;
