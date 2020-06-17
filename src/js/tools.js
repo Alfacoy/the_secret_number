@@ -19,3 +19,35 @@ export const UserTitle = (URL) => {
 
 //Número secreto
 export const SecretNumber = () => Math.floor(Math.random() * 100) + 1;
+
+//ColdHotBurn
+export function ColdHotBurn(secret, inputNumber) {
+  const secretNumber = secret;
+  const myNumber = parseInt(inputNumber);
+  let diferencia = secretNumber - myNumber;
+
+  if (
+    (diferencia <= 5 && diferencia >= 1) ||
+    (diferencia >= -5 && diferencia <= -1)
+  ) {
+    return "Me quemo!!";
+  }
+
+  if (
+    (diferencia <= 15 && diferencia >= 6) ||
+    (diferencia >= -15 && diferencia <= -6)
+  ) {
+    return "Caliente!!";
+  }
+
+  if (
+    (diferencia <= 25 && diferencia >= 16) ||
+    (diferencia >= -25 && diferencia <= -16)
+  ) {
+    return "Tibio!!";
+  }
+
+  if (diferencia >= 26 || diferencia <= -26) {
+    return "Frio!!";
+  }
+}

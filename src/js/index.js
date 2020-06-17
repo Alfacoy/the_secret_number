@@ -1,4 +1,4 @@
-import { UserTitle, URL, SecretNumber } from "./tools.js";
+import { UserTitle, URL, SecretNumber, ColdHotBurn } from "./tools.js";
 UserTitle(URL());
 
 let theSecretNumber = SecretNumber();
@@ -17,6 +17,8 @@ const message = document.querySelector("#message");
 const round = document.querySelector("#round");
 const winOrLose = document.querySelector("#winOrLose");
 const secretNumber = document.querySelector("#secretNumber");
+//Image Results
+const gifResult = document.querySelector("#gifResults");
 //Input Number
 const number = document.querySelector("#input_number");
 
@@ -35,9 +37,7 @@ btn.onclick = () => {
         }`;
         areYouWin = true;
       } else {
-        number.value < theSecretNumber
-          ? (message.innerText = "El número secreto es más grande.")
-          : (message.innerText = "El número secreto es más chico.");
+        message.innerText = ColdHotBurn(theSecretNumber, number.value);
 
         roundNumber--;
         numberTries++;
@@ -60,6 +60,10 @@ btn.onclick = () => {
   areYouWin
     ? (secretNumber.innerText = theSecretNumber)
     : (secretNumber.innerText = theSecretNumber);
+
+  areYouWin
+    ? null
+    : gifResult.setAttribute("src", "../img/gif/raton-animar-2.gif");
 
   roundNumber == 0 || areYouWin ? Hide() : null;
 };
