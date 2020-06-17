@@ -1,29 +1,50 @@
+:root {
+  --main-bg-color: #43457f;
+  --header-bg-color: #685489;
+  --title-bg-color: #685489;
+  --callToAction-bg-color: #ff9b83;
+  --message-bg-color: #ff9b83;
+  --text-color: #fff;
+  --message-color: #fff;
+  --numberSecret-color: #ff9b83;
+}
+@font-face {
+  font-family: "PressStart";
+  src: url("../fonts/PressStart2P-Regular.TTF");
+}
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "PressStart";
 }
 body {
+  height: 100vh;
   margin: 0;
-  background-color: #00b8ff;
-  color: #fff;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+a:link:visited {
+  color: var(--text-color);
 }
 h2 {
   text-align: center;
 }
 h3 {
   text-transform: uppercase;
-  background-color: #9600ff;
+  background-color: var(--title-bg-color);
   padding: 0.5rem 0.5rem;
 }
+/*Clases*/
 .container {
   padding: 0 1rem;
 }
 .header {
   text-align: center;
   text-transform: uppercase;
-  color: #fff;
-  background-color: #4900ff;
+  background-color: var(--header-bg-color);
   padding: 2rem 0;
   margin-bottom: 3rem;
 }
@@ -34,6 +55,10 @@ h3 {
   justify-content: center;
   align-items: center;
   margin: 5rem 0;
+}
+.callToAction h3 {
+  line-height: 2rem;
+  text-align: center;
 }
 .form {
   padding: 2rem 0.5rem;
@@ -56,7 +81,7 @@ h3 {
   width: 300px;
   padding: 1rem 0.5rem;
   font-weight: bold;
-  background-color: #ff00c1;
+  background-color: var(--callToAction-bg-color);
 }
 /*MainGame*/
 /*MainGame__Input*/
@@ -74,11 +99,11 @@ h3 {
 }
 /*MainGame__message*/
 .mainGame__message {
-  color: #fff;
+  color: var(--message-color);
   font-size: 1.5rem;
 }
 .mainGame__message--round {
-  background-color: tomato;
+  background-color: var(--message-bg-color);
   padding: 0.3rem 0.5rem;
   text-align: center;
 }
@@ -88,19 +113,19 @@ h3 {
 }
 .mainResults__result {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 .mainResults__number {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #4900ff;
+  color: var(--numberSecret-color);
 }
 .mainResults__reset {
-  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 .mainResults__reset > p {
-  font-size: 1.4rem;
+  font-size: 1em;
 }
 /*Displays*/
 .hide {
@@ -121,5 +146,3 @@ h3 {
     padding: 0;
   }
 }
-
-/*Agregar variables de colores*/

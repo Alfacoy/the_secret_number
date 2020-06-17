@@ -13,21 +13,47 @@
 
     <main class="container">
       <section>
-        <h3>Instrucciones</h3>
-        <p>
-          El sistema seleccionara un número aleatorio del 1 al 100 y tu mision
-          es descubrirlo antes de los 10 intentos . Después de cada intento
-          debería decirle al jugador si ha acertado o no - y si está equivocado,
-          debería decirle si se ha quedado corto, o se ha pasado. También
-          debería decir los números que ya se han probado anteriormente. El
-          juego acabará una vez que el jugador acierte o cuando se acaben los
-          intentos. Cuando el juego se acabe, se le debe dar al jugador la
-          opción de volver a jugar.
-        </p>
+        <div>
+          <h3>Historia</h3>
+          <p>
+            Enojada por toda la gente que sale en televisión rompiendo la
+            cuarentena, una bruja decide salir de su bosque a cobrar venganza
+            contra la humanidad.
+          </p>
+          <p>
+            Buscando su primera víctima, encuentra tu casa y golpea la puerta
+            amenazandote con convertirte en rata si no descubres su acertijo.
+          </p>
+        </div>
+
+        <div>
+          <h3>Objetivo</h3>
+          <p>
+            Descubrir el número secreto que mentalizo la bruja.
+          </p>
+        </div>
+
+        <div>
+          <h3>Reglas</h3>
+          <p>
+            - Responder su acertijo detrás de la puerta.
+          </p>
+          <p>
+            - El rango del número va del 1 al 100.
+          </p>
+          <p>
+            - Como tu no rompiste la cuarentena y la bruja si, te dara 10
+            intentos para descubrir el número.
+          </p>
+          <p>
+            - Como también olvido salir con barbijo a la calle, te dirá si tu
+            respuesta está cerca o lejos del objetivo.
+          </p>
+        </div>
       </section>
 
       <section class="callToAction">
-        <h3>¿Te animas? ¡Inscribete!</h3>
+        <h3>¿Aceptas el desafío?</h3>
         <form
           action="src/pages/index.html"
           method="GET"
@@ -38,7 +64,7 @@
             <label for="name">Nombre</label>
             <input type="text" name="Nombre" id="name" required />
           </div>
-          <input type="submit" value="¡Vamos!" />
+          <input type="submit" value="Acepto" />
         </form>
       </section>
     </main>
