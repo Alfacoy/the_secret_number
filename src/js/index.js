@@ -22,7 +22,6 @@ const gifResult = document.querySelector("#gifResults");
 //Input Number
 const number = document.querySelector("#input_number");
 
-console.log(theSecretNumber);
 //Event Click
 btn.onclick = () => {
   if (roundNumber !== 0) {
