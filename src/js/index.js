@@ -61,7 +61,9 @@ btn.onclick = () => {
     ? (secretNumber.innerText = theSecretNumber)
     : (secretNumber.innerText = theSecretNumber);
 
-  areYouWin ? null : gifResult.setAttribute("src", "../img/gif/rata.gif");
+  areYouWin
+    ? gifResult.setAttribute("src", "../img/gif/bruja.gif")
+    : gifResult.setAttribute("src", "../img/gif/rata.gif");
 
   roundNumber == 0 || areYouWin ? Hide() : null;
 };
