@@ -25,17 +25,33 @@ a {
 a:link:visited {
   color: var(--text-color);
 }
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+  list-style: none;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
 h2 {
+  font-size: 1.3rem;
   text-align: center;
 }
-h3 {
-  text-transform: uppercase;
-  background-color: var(--title-bg-color);
-  padding: 0.5rem 0.5rem;
+summary {
+  margin-bottom: 1rem;
 }
 p {
   line-height: 1.7rem;
   letter-spacing: 0.2rem;
+}
+img {
+  display: block;
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
 }
 /*Clases*/
 .container {
@@ -45,8 +61,13 @@ p {
   text-align: center;
   text-transform: uppercase;
   background-color: var(--header-bg-color);
-  padding: 2rem 0;
-  margin-bottom: 3rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+.subTitles {
+  text-transform: uppercase;
+  background-color: var(--title-bg-color);
+  padding: 0.5rem 0.5rem;
 }
 /*Formulario*/
 .callToAction {
@@ -54,7 +75,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5rem 0;
+  margin: 2rem 0;
 }
 .callToAction h3 {
   line-height: 2rem;
@@ -64,6 +85,7 @@ p {
   padding: 2rem 0.5rem;
   border: 1px solid black;
   border-radius: 0.3rem;
+  background-color: var(--callToAction-bg-color);
 }
 .form div > label {
   display: block;
@@ -91,6 +113,8 @@ p {
   padding: 1rem 0.5rem;
   border: 1px solid black;
   border-radius: 0.3rem;
+  background-color: var(--callToAction-bg-color);
+  margin-bottom: 1rem;
 }
 .mainGame__input > input:first-of-type {
   margin-bottom: 1rem;
@@ -100,12 +124,33 @@ p {
 /*MainGame__message*/
 .mainGame__message {
   color: var(--message-color);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .mainGame__message--round {
-  background-color: var(--message-bg-color);
   padding: 0.3rem 0.5rem;
   text-align: center;
+}
+.mainGame__hearts {
+  display: flex;
+  justify-content: start;
+}
+.hearts {
+  margin: 0;
+  margin-right: 0.2rem;
+  width: 10%;
+}
+/*COLORS*/
+.hot {
+  color: #ffac83;
+}
+.cold {
+  color: #83cbff;
+}
+.burn {
+  color: #f56161;
+}
+.warm {
+  color: #ffe783;
 }
 /*MainResults*/
 .mainResults {
@@ -114,7 +159,7 @@ p {
 .mainResults__result {
   text-transform: uppercase;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 .mainResults__number {
   font-size: 1.2rem;
@@ -122,7 +167,7 @@ p {
   color: var(--numberSecret-color);
 }
 .mainResults__reset {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .mainResults__reset > p {
   font-size: 1em;
@@ -144,5 +189,8 @@ p {
     max-width: 600px;
     margin: 0 auto;
     padding: 0;
+  }
+  img {
+    width: 50%;
   }
 }

@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adivina el número</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <!--GoogleFonts-->
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <!--Favicon-->
     <link
       rel="shortcut icon"
       href="../img/favicon/favicon.ico"
       type="image/x-icon"
     />
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
@@ -24,30 +27,44 @@
     <main class="container">
       <!--MainGame-->
       <section class="mainGame" id="mainGame">
-        <h2 id="user_title"></h2>
+        <h2 id="userTitle"></h2>
+        <!--GameInput-->
         <div class="mainGame__input">
-          <input type="tel" id="input_number" />
-          <input class="btn" type="button" value="Probar" id="btn_number" />
+          <input type="tel" id="inputNumber" required />
+          <input class="btn" type="button" value="Probar" id="btnNumber" />
         </div>
+        <!--Console-->
         <div class="mainGame__message">
-          <p id="round" class="mainGame__message--round">
-            Te quedan 10 intentos.
-          </p>
-          <p id="list_number"></p>
-          <p id="message"></p>
+          <div class="mainGame__hearts">
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-01" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-02" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-03" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-04" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-05" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-06" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-07" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-08" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-09" />
+            <img class="hearts" src="../img/gif/corazon.png" alt="hearts-10" />
+          </div>
+          <p id="coldHotBurnMessage"></p>
+          <ul id="listNumber"></ul>
         </div>
       </section>
-      <!--Results-->
-      <section class="mainResults hide" id="reset">
+      <!--RESULTS-->
+      <section class="mainResults hide" id="tryAgain">
         <p class="mainResults__result" id="winOrLose"></p>
         <p>
           El número secreto era
           <span id="secretNumber" class="mainResults__number"></span>
         </p>
-        <img id="gifResults" />
+        <figure>
+          <img id="gifResults" />
+        </figure>
+        <!--RESET GAME-->
         <div class="mainResults__reset">
           <p>¿Volver a jugar?</p>
-          <input class="btn" type="button" value="Reintentar" id="btn_reset" />
+          <input class="btn" type="button" value="Reintentar" id="btnReset" />
         </div>
       </section>
     </main>

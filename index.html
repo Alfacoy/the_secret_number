@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adivina el número</title>
-    <link rel="stylesheet" href="src/css/style.css" />
+    <!--GoogleFonts-->
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+    <!--Favicon-->
     <link
       rel="shortcut icon"
       href="./src/img/favicon/favicon.ico"
       type="image/x-icon"
     />
+    <!--CSS-->
+    <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
     <header class="header">
@@ -22,8 +25,8 @@
 
     <main class="container">
       <section>
-        <div>
-          <h3>Historia</h3>
+        <article>
+          <h3 class="subTitles">Historia</h3>
           <p>
             Enojada por toda la gente que sale en televisión rompiendo la
             cuarentena, una bruja decide salir de su bosque a cobrar venganza
@@ -34,36 +37,41 @@
             amenazando con convertirte en rata si no descubres "el número
             secreto".
           </p>
-        </div>
+        </article>
 
-        <div>
-          <h3>Objetivo</h3>
-          <p>
-            Descubrir el número que mentalizo la bruja.
-          </p>
-        </div>
+        <article>
+          <details>
+            <summary class="subTitles">Objetivo</summary>
+            <p>
+              - Descubrir el número que mentalizo la bruja.
+            </p>
+          </details>
+        </article>
 
-        <div>
-          <h3>Reglas</h3>
-          <p>
-            - Responder su acertijo detrás de la puerta.
-          </p>
-          <p>
-            - El rango del número va del 1 al 100.
-          </p>
-          <p>
-            - Como tu no rompiste la cuarentena y la bruja si, te dará 10
-            intentos para descubrir el número.
-          </p>
-          <p>
-            - Como también olvido salir con barbijo a la calle, te dirá si tu
-            respuesta está cerca o lejos del objetivo.
-          </p>
-        </div>
+        <article>
+          <details>
+            <summary class="subTitles">Reglas</summary>
+            <p>
+              - Responder su acertijo detrás de la puerta.
+            </p>
+            <p>
+              - El rango del número va del 1 al 100.
+            </p>
+            <p>
+              - Como tu no rompiste la cuarentena y la bruja si, te dará 10
+              intentos para descubrir el número.
+            </p>
+            <p>
+              - Como también olvido salir con barbijo a la calle, te dirá si tu
+              respuesta está cerca o lejos del objetivo.
+            </p>
+          </details>
+        </article>
       </section>
 
+      <!--CallToAction-->
       <section class="callToAction">
-        <h3>¿Aceptas el desafío?</h3>
+        <h3 class="subTitles">¿Aceptas el desafío?</h3>
         <form
           action="src/pages/index.html"
           method="GET"
@@ -71,8 +79,8 @@
           class="form"
         >
           <div>
-            <label for="name">Nombre</label>
-            <input type="text" name="Nombre" id="name" required />
+            <label for="userName">Nombre</label>
+            <input type="text" name="Nombre" id="userName" required />
           </div>
           <input type="submit" value="Acepto" />
         </form>

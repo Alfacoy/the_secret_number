@@ -1,57 +1,44 @@
 import { UserTitle, URL, SecretNumber, ColdHotBurn } from "./tools.js";
 UserTitle(URL());
 
+//VARIABLES
 let theSecretNumber = SecretNumber();
 let roundNumber = 10;
-let numberTries = 0;
 let areYouWin = false;
-//Input Buttons
-const btn = document.querySelector("#btn_number");
-const tryAgain = document.querySelector("#reset");
-//Game
+//MAINGAME_INPUTS
 const game = document.querySelector("#mainGame");
-const btnTryAgain = document.querySelector("#btn_reset");
-const list = document.querySelector("#list_number");
-//Message
-const message = document.querySelector("#message");
-const round = document.querySelector("#round");
+const number = document.querySelector("#inputNumber");
+const btnNumber = document.querySelector("#btnNumber");
+//MAINGAME_MESSAGE
+const hearts = document.querySelectorAll(".hearts");
+const coldHotBurnMessage = document.querySelector("#coldHotBurnMessage");
+const listNumber = document.querySelector("#listNumber");
+//MAINGAME_RESULTS
 const winOrLose = document.querySelector("#winOrLose");
 const secretNumber = document.querySelector("#secretNumber");
-//Image Results
 const gifResult = document.querySelector("#gifResults");
-//Input Number
-const number = document.querySelector("#input_number");
+//MAINGAME_RESET
+const tryAgain = document.querySelector("#tryAgain");
+const btnTryAgain = document.querySelector("#btnReset");
+console.log(theSecretNumber);
+btnNumber.onclick = () => {
+  const regex = /[0-9]*/;
+  let valor = number.value.match(regex);
 
-//Event Click
-btn.onclick = () => {
-  if (roundNumber !== 0) {
-    if (
-      roundNumber !== 0 &&
-      number.value !== "" &&
-      !isNaN(number.value) &&
-      number.value <= 100
-    ) {
-      if (number.value == theSecretNumber) {
-        message.innerText = `¡Lo lograste! ${
-          numberTries == 0 ? "En primer vuelta. Felicitaciones." : null
-        }`;
-        areYouWin = true;
-      } else {
-        message.innerText = ColdHotBurn(theSecretNumber, number.value);
-
-        roundNumber--;
-        numberTries++;
-      }
-
-      list.innerText += ` ${number.value}`;
+  //NUMBER_VALIDATION
+  if (roundNumber !== 0 && valor[0] && number.value <= 100) {
+    if (number.value == theSecretNumber) {
+      areYouWin = true;
+    } else {
+      coldHotBurnMessage.innerText = ColdHotBurn(theSecretNumber, number.value);
+      roundNumber--;
+      hearts[roundNumber].classList.add("hide");
+      AddNumberToTheList(number.value);
+      AddColorToTheNumber(coldHotBurnMessage);
     }
-
-    round.innerText =
-      roundNumber > 0
-        ? `Te quedan ${roundNumber} intentos.`
-        : `No te quedan más intentos.`;
-    number.value = "";
   }
+
+  number.value = "";
 
   areYouWin
     ? (winOrLose.innerText = "Ganaste")
@@ -65,7 +52,7 @@ btn.onclick = () => {
     ? gifResult.setAttribute("src", "../img/gif/bruja.gif")
     : gifResult.setAttribute("src", "../img/gif/rata.gif");
 
-  roundNumber == 0 || areYouWin ? Hide() : null;
+  roundNumber == 0 || areYouWin ? TryAgain() : null;
 };
 
 //Reset Game
@@ -76,14 +63,45 @@ function Reset() {
   roundNumber = 10;
   areYouWin = false;
   theSecretNumber = SecretNumber();
+  listNumber.innerText = "";
+  coldHotBurnMessage.innerText = "";
   tryAgain.classList.add("hide");
   game.classList.remove("hide");
-  list.innerText = "";
-  message.innerText = "";
-  round.innerText = `Te quedan ${roundNumber} intentos.`;
+  gifResult.setAttribute("src", "");
+  hearts.forEach((item) => item.classList.remove("hide"));
 }
 
-function Hide() {
+function TryAgain() {
   game.classList.add("hide");
   tryAgain.classList.remove("hide");
+}
+
+function AddNumberToTheList(whatIsTheNumber) {
+  const li = document.createElement("li");
+  const content = document.createTextNode(whatIsTheNumber);
+  li.appendChild(content);
+  li.setAttribute("name", "numberList");
+  listNumber.appendChild(li);
+}
+
+function AddColorToTheNumber(message) {
+  const listNumberItems = document.getElementsByName("numberList");
+  const arrayList = Array.from(listNumberItems);
+
+  arrayList
+    .filter((items) => items.className == "")
+    .map((color) => {
+      if (message.textContent == "Frio!!") {
+        color.classList.add("cold");
+      }
+      if (message.textContent == "Tibio!!") {
+        color.classList.add("warm");
+      }
+      if (message.textContent == "Caliente!!") {
+        color.classList.add("hot");
+      }
+      if (message.textContent == "Me quemo!!") {
+        color.classList.add("burn");
+      }
+    });
 }

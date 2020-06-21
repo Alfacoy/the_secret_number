@@ -10,7 +10,7 @@ const Capitalize = (param) => param.charAt(0).toUpperCase() + param.slice(1);
 
 //Asigna el nombre de usuario al titulo.
 export const UserTitle = (URL) => {
-  const title = document.getElementById("user_title");
+  const title = document.getElementById("userTitle");
   const name = URL.filter((i) => i[0] == "Nombre")[0][1];
   title.innerText = `¡Mucha suerte, ${
     isNaN(name) ? Capitalize(name) : `N°${name}`
