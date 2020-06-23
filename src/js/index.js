@@ -20,7 +20,6 @@ const gifResult = document.querySelector("#gifResults");
 //MAINGAME_RESET
 const tryAgain = document.querySelector("#tryAgain");
 const btnTryAgain = document.querySelector("#btnReset");
-console.log(theSecretNumber);
 btnNumber.onclick = () => {
   const regex = /[0-9]*/;
   let valor = number.value.match(regex);
